@@ -1,0 +1,45 @@
+<mvc:View controllerName="talentsview.controller.Master" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:semantic="sap.m.semantic">
+	<semantic:MasterPage id="page" showSubHeader="true" navButtonPress="onNavBack" showNavButton="true" title="{masterView>/title}">
+		<semantic:subHeader>
+			<Bar id="headerBar">
+				<contentMiddle>
+					<SearchField id="searchField" showRefreshButton="{= !${device>/support/touch} }" tooltip="{i18n>masterSearchTooltip}" width="100%"
+						search="onSearch"></SearchField>
+				</contentMiddle>
+			</Bar>
+		</semantic:subHeader>
+		<semantic:content>
+			<PullToRefresh id="pullToRefresh" visible="{device>/support/touch}" refresh="onRefresh"/>
+			<!-- For client side filtering add this to the items attribute:  parameters: {operationMode: 'Client'}}" -->
+			<List id="list"
+				items="{ path: '/User', parameters: { expand: 'manager' }, sorter:[{path:'firstName',descending:false}], filters: { path: 'location', operator :'Contains', value1: 'Chicago' }, groupHeaderFactory: '.createGroupHeader' }"
+				backgroundDesign="Solid" showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false"
+				busyIndicatorDelay="{masterView>/delay}" noDataText="{masterView>/noDataText}"
+				mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" updateFinished="onUpdateFinished" selectionChange="onSelectionChange">
+				<infoToolbar>
+					<Toolbar active="true" id="filterBar" visible="{masterView>/isFilterBarVisible}" press="onOpenViewSettings">
+						<Title id="filterBarLabel" text="{masterView>/filterBarLabel}"/>
+					</Toolbar>
+				</infoToolbar>
+				<items>
+					<CustomListItem id="customList" type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}" press="onSelectionChange">
+						<HBox>
+							<Image class="listImg" src="{ path: 'photo', formatter: '.formatter.formatImage' }"/>
+							<VBox class="listVBox">
+								<Label text="{firstName} {lastName}"></Label>
+								<Text text="{jobTitle}" wrapping="true"></Text>
+							</VBox>
+						</HBox>
+					</CustomListItem>
+				</items>
+			</List>
+		</semantic:content>
+		<semantic:sort>
+			<semantic:SortSelect id="sort" selectedKey="{masterView>/sortBy}" change="onSort">
+				<core:Item id="masterSort1" key="firstName" text="{i18n>masterSort1}"/>
+				<core:Item id="masterSort2" key="lastName" text="{i18n>masterSort2}"/>
+			</semantic:SortSelect>
+		</semantic:sort>
+	</semantic:MasterPage>
+</mvc:View>

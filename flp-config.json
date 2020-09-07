@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "talentsview.talentsview",
+        "description": "Talento Natural",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/webapp",
+        "appUrl": "#talentsview-Display",
+        "navigationComponentName": "talentsview",
+        "intentSemanticObject": "talentsview",
+        "intentAction": "Display",
+        "html5ApplicationName": "talentsview",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "016a97c5-1745-4ae5-a990-0e0d9cb0ae49"
+        ],
+        "contentPackages": [
+            "4caec32c-5cc1-47d7-a0b3-d0082eb451aa"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Talento Natural",
+        "subtitle": "Avaliação Potencial",
+        "searchKeywords": "Talento Natural,Avaliação Potencial",
+        "displayIconUrl": "sap-icon://account",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

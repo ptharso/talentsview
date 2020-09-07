@@ -1,0 +1,32 @@
+{
+  "welcomeFile": "/webapp/index.html",
+  "sendWelcomeFileRedirect": true,
+  "routes": [
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/destinations/SFSF_ODATA_PROXY",
+      "target": {
+        "type": "destination",
+        "name": "sap_hcmcloud_core_odata"
+      },
+      "description": "SFSF Proxy OData"
+    }
+  ]
+}

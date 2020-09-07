@@ -1,0 +1,9 @@
+<mvc:View
+		controllerName="talentsview.controller.App"
+		xmlns:mvc="sap.ui.core.mvc"
+		class="teamView"
+		busy="{appView>/busy}"
+		busyIndicatorDelay="{appView>/delay}"
+		xmlns="sap.m">
+	<SplitApp id="idAppControl" />
+</mvc:View>

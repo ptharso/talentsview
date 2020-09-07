@@ -1,0 +1,12 @@
+.blocf {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: center;
+}
+
+.bloco { border: dotted 1px #00CCFF; }
+
+.listImg { width: 35px; padding: 5px; }

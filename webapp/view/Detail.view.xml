@@ -1,0 +1,114 @@
+<mvc:View xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns:form="sap.ui.layout.form" controllerName="talentsview.controller.Detail">
+	<!--showAnchorBar="true" -->
+	<uxap:ObjectPageLayout id="detailpage" showTitleInHeaderContent="true" class="objectPageLayout" subSectionLayout="TitleOnTop" >
+		<uxap:headerTitle>
+			<uxap:ObjectPageHeader 
+				id="headertop" 
+				objectImageURI="{ path: 'photo', formatter: '.formatter.formatImage' }" 
+				objectTitle="{firstName} {lastName}" 
+				objectSubtitle="{ path: 'title', formatter: '.formatter.formatEmptyText' }" 
+				headerDesign="Light" 
+				objectImageShape="Circle"
+				isObjectIconAlwaysVisible="false" 
+				isObjectTitleAlwaysVisible="false" 
+				isObjectSubtitleAlwaysVisible="false" 
+				isActionAreaAlwaysVisible="true">
+			</uxap:ObjectPageHeader>
+		</uxap:headerTitle>
+		<uxap:headerContent>
+			<m:VBox displayInline="false" justifyContent="Start" alignItems="Stretch" direction="Column" fitContainer="false" width="auto" renderType="Div" visible="true">
+				<m:items>
+					<m:Link id="link1" text="{division}" textAlign="Begin" width="auto" wrapping="false" enabled="false" visible="true" emphasized="false" subtle="false"/>
+				</m:items>
+				<m:layoutData/>
+			</m:VBox>
+		</uxap:headerContent>		
+		<uxap:sections enableScrolling="false">
+			<uxap:ObjectPageSection showTitle="true" title="Employee" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="EMPLOYEE" mode="Expanded">
+						<uxap:blocks>
+							<form:SimpleForm editable="false" layout="ResponsiveGridLayout" maxContainerCols="3" labelSpanXL="4" labelSpanL="4" labelSpanM="4" emptySpanXL="0" emptySpanL="0" emptySpanM="0" columnsXL="3" columnsL="2" columnsM="2">
+								<form:content>
+									<core:Title text="Basics" emphasized="true" level="H2"/>
+									<m:Label text="Full Name" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" text="{firstName} {lastName}"/>
+									<m:Label text="Residence" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" text="{ path: 'city', formatter: '.formatter.formatEmptyText' }"/>
+									<m:Label text="Date Of Birth" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" text="{ path: 'dateOfBirth', formatter: '.formatter.formatDate'}"/>
+									<m:Label text="Birth Talent" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text text="{path:'cellPhone',formatter:'.formatter.formatEmptyText'}" textAlign="Begin" textDirection="Inherit" />
+
+									<core:Title text="Status" emphasized="true" level="H2"/>
+									<m:Label text="Marital Status" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" text="{ path: 'married', formatter: '.formatter.formatMaritalStatus'}"/>
+									<m:Label text="Gender" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" text="{ path: 'gender', formatter: '.formatter.formatEmptyText'}"/>
+									<m:Label text="Citizenship" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" text="{ path: 'citizenship', formatter: '.formatter.formatEmptyText'}"/>
+									<m:Label text="Timezone" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" text="{ path: 'timeZone', formatter: '.formatter.formatEmptyText'}"/>
+									
+									<core:Title text="Contact Info" level="H2"/>
+									<m:Label text="Business Phone" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text text="{ path: 'businessPhone', formatter: '.formatter.formatEmptyText'}"/>
+									<m:Label text="Mobile Phone" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text  id="natal" text="{ path: 'cellPhone', formatter: '.formatter.formatEmptyText'}"/>
+									<m:Label text="Email" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text text="{ path: 'email', formatter: '.formatter.formatEmptyText'}"/>
+									<m:Label text="Home Address" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text width="100%" text="{ parts:[ {path: 'addressLine1'}, {path: 'addressLine2'}, {path: 'city'}, {path: 'zipCode'}, {path: 'country'} ], formatter: '.formatter.formatAddress'}"/>
+									
+									<core:Title text="Location" level="H2"/>
+									<m:Label text="Department" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text text="{ path: 'department', formatter: '.formatter.formatEmptyText' }"/>
+									<m:Label text="Division" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text text="{ path: 'division', formatter: '.formatter.formatEmptyText'}"/>
+									<m:Label text="Location" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text text="{ path: 'location', formatter: '.formatter.formatEmptyText'}"/>
+									<m:Label text="Job Code" design="Standard" width="auto" required="false" textAlign="Begin" textDirection="Inherit"/>
+									<m:Text text="{ path: 'jobCode', formatter: '.formatter.formatEmptyText'}"/>
+								</form:content>
+								<form:title/>
+							</form:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			
+			<uxap:ObjectPageSection showTitle="true" title="Talents" titleUppercase="true" visible="true">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Talents" mode="Expanded">
+						<uxap:blocks>
+							<m:FlexBox  id="graph" class="blocf" width="100%" visible="true">
+								<m:HBox width="100%" height="20%"><m:Text text=" "/></m:HBox><m:HBox width="100%" height="20%"><m:Text text=" "/></m:HBox>
+								<m:HBox class="bloco" id="pyzza"   width="50%"/><m:HBox class="bloco" id="abran"  width="50%"/>
+								<m:HBox width="100%" height="20%"><m:Text text=" "/></m:HBox>
+								<m:HBox class="bloco" id="graf0"  width="21%"/><m:HBox class="bloco" id="graf2"   width="19%"/>
+								<m:HBox class="bloco" id="graf1"  width="21%"/><m:HBox class="bloco" id="graf3"  width="39%"/>
+							</m:FlexBox>
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+			
+			<uxap:ObjectPageSection showTitle="true" title="Mapping" titleUppercase="true" visible="false">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection  title="Mapping" mode="Expanded">
+						<uxap:blocks>
+							<m:Image id="mapa" src="./webapp/img/ajuda.jpg" width="900px" press="onSite" />
+						</uxap:blocks>
+						<uxap:moreBlocks/>
+						<uxap:actions/>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+				<uxap:customAnchorBarButton/>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</mvc:View>
